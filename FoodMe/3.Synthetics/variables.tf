@@ -7,7 +7,7 @@ variable "nr_api_key" {
 }
 
 variable "nr_region" {
-  default = "XXXXX"
+  default = "US"
 }
 
 variable "nr_uri" {
