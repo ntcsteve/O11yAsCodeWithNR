@@ -20,8 +20,6 @@ Follow the instructions as described [here](https://docs.newrelic.com/docs/apis/
 
 The link to the Instruqt workshop is [here](https://play.instruqt.com/newrelic/invite/pcvdous59f2x). This hands on workshop is part of FutureStack APJ - 2022.
 
----
-
 ## Support
 
 The code is part of New Relic experimental. The project is being developed in the open and we welcome all feedback and contributions.
