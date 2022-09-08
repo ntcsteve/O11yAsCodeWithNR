@@ -21,12 +21,12 @@ resource "newrelic_synthetics_monitor" "O11y_asCode-SimpleBrowser-TF" {
   type = "BROWSER"
 
   # The interval (in minutes) at which this monitor should run.
-  frequency = 5
+  period = "EVERY_5_MINUTES"
   status = "ENABLED"
 
   # Public minion location
   # https://docs.newrelic.com/docs/synthetics/synthetic-monitoring/administration/synthetic-public-minion-ips/#location
-  locations = ["AWS_AP_SOUTHEAST_2", "AWS_AP_SOUTHEAST_1", "AWS_AP_SOUTH_1", "AWS_AP_NORTHEAST_1", "AWS_AP_NORTHEAST_2"]
+  locations_public = ["AP_SOUTHEAST_2", "AP_SOUTHEAST_1", "AP_SOUTH_1", "AP_NORTHEAST_1", "AP_NORTHEAST_2"]
 
   uri                       = (var.nr_uri)
   # validation_string       = "add example validation check here" # optional for type "SIMPLE" and "BROWSER"
