@@ -14,7 +14,3 @@ variable "nr_region" {
 variable "nr_appname" {
   default = "FoodMe-XXXXX"
 }
-
-variable "nr_email" {
-  default = "XXXXX"
-}
