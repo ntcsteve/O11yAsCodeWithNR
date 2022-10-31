@@ -15,5 +15,5 @@ variable "nr_appname" {
 }
 
 variable "nr_email" {
-  default = "username@example.com"
+  default = "XXXXX"
 }
