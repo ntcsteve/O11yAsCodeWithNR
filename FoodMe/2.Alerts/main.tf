@@ -190,7 +190,7 @@ resource "newrelic_workflow" "workflow-example" {
     predicate {
       attribute = "policyName"
       operator  = "DOES_NOT_CONTAIN"
-      values    = ["Golden Signals"]
+      values    = ["O11y_asCode-FoodMe-Alerts-TF"]
     }
   }
   destination {
