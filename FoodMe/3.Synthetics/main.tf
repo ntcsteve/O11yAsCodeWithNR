@@ -1,4 +1,4 @@
-# configure Terraform
+# get the New Relic terraform provider
 terraform {
   required_version = "~> 1.0"
   required_providers {
@@ -17,19 +17,20 @@ provider "newrelic" {
 
 # resource to create, update, and delete a synthetics monitor in New Relic.
 resource "newrelic_synthetics_monitor" "O11y_asCode-SimpleBrowser-TF" {
+  # The human-readable identifier for the monitor.
   name = "O11y_asCode-SimpleBrowser-TF"
+  # The monitor type. Valid values are SIMPLE and BROWSER.
   type = "BROWSER"
 
   # The interval (in minutes) at which this monitor should run.
-  period = "EVERY_5_MINUTES"
+  period = "EVERY_30_MINUTES"
+  # The run state of the monitor.	
   status = "ENABLED"
 
   # Public minion location
   # https://docs.newrelic.com/docs/synthetics/synthetic-monitoring/administration/synthetic-public-minion-ips/#location
   locations_public = ["AP_SOUTHEAST_2", "AP_SOUTHEAST_1", "AP_SOUTH_1", "AP_NORTHEAST_1", "AP_NORTHEAST_2"]
-
-  uri                       = (var.nr_uri)
-  # validation_string       = "add example validation check here" # optional for type "SIMPLE" and "BROWSER"
-  # verify_ssl              = true                                # optional for type "SIMPLE" and "BROWSER"
-  # bypass_head_request     = true                                # Note: optional for type "BROWSER" only                        
+	
+  # The URI the monitor runs against.
+  uri                       = (var.nr_uri)                      
 }

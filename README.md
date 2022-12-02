@@ -18,7 +18,7 @@ Follow the instructions as described [here](https://docs.newrelic.com/docs/apis/
 
 ## DevRel Workshop - O11y As Code - Terraform
 
-This is the code used in the hands on workshop that is conducted by DevRel New Relic. The sample code is available for your own reference.
+This is the main code used in the hands on workshop that is conducted by DevRel New Relic. The sample code is available for your own reference.
 
 ## Support
 

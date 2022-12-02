@@ -1,4 +1,4 @@
-# configure Terraform
+# get the New Relic terraform provider
 terraform {
   required_version = "~> 1.0"
   required_providers {
@@ -17,7 +17,8 @@ provider "newrelic" {
 
 # data source to get information about a specific entity in New Relic that already exists. 
 data "newrelic_entity" "app_name" {
-  name = (var.nr_appname) # Note: This must be an exact match of your app name in New Relic (Case sensitive)
+  # Note: This must be an exact match of your app name in New Relic (Case sensitive)
+  name = (var.nr_appname) 
   type = "APPLICATION"
   domain = "APM"
 }
@@ -26,6 +27,7 @@ data "newrelic_entity" "app_name" {
 resource "newrelic_entity_tags" "app_name" {
     guid = data.newrelic_entity.app_name.guid
 
+    # A nested block that describes an entity tag
     tag {
         key = "O11yAsCode"
         values = ["Hashicorp", "Terraform", "HCL"]

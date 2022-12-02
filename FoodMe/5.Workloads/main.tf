@@ -1,4 +1,4 @@
-# Configure Terraform
+# get the New Relic terraform provider
 terraform {
   required_version = "~> 1.0"
   required_providers {
