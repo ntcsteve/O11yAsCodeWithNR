@@ -188,8 +188,8 @@ resource "newrelic_workflow" "workflow-example" {
     type = "FILTER"
 
     predicate {
-      attribute = "policyName"
-      operator  = "DOES_NOT_CONTAIN"
+      attribute = "accumulations.policyName"
+      operator  = "CONTAINS"
       values    = ["O11y_asCode-FoodMe-Alerts-TF"]
     }
   }
