@@ -152,31 +152,7 @@ resource "newrelic_nrql_alert_condition" "GoldenSignals-Saturation" {
   }
 }
 
-resource "newrelic_notification_destination" "alert_email_destination" {
-  name = "email-example"
-  type = "EMAIL"
-
-  property {
-    key   = "email"
-    value = var.nr_email
-  }
-}
-
-resource "newrelic_notification_channel" "alert_notification_email" {
-  account_id     = var.nr_account_id
-  name           = "email example"
-  type           = "EMAIL"
-  destination_id = newrelic_notification_destination.alert_email_destination.id
-  product        = "IINT"
-
-  property {
-    key   = "subject"
-    value = "name: {{ alert_notification_email }}"
-  }
-}
-
-
-
+#  resource to create and manage New Relic workflows
 resource "newrelic_workflow" "workflow-example" {
   name                  = "workflow-example"
   account_id            = var.nr_account_id
@@ -198,3 +174,27 @@ resource "newrelic_workflow" "workflow-example" {
   }
 }
 
+# resource to create and manage New Relic notification destinations
+resource "newrelic_notification_destination" "alert_email_destination" {
+  name = "email-example"
+  type = "EMAIL"
+
+  property {
+    key   = "email"
+    value = var.nr_email
+  }
+}
+
+# resource to create and manage New Relic notification channels
+resource "newrelic_notification_channel" "alert_notification_email" {
+  account_id     = var.nr_account_id
+  name           = "email example"
+  type           = "EMAIL"
+  destination_id = newrelic_notification_destination.alert_email_destination.id
+  product        = "IINT"
+
+  property {
+    key   = "subject"
+    value = "name: {{ alert_notification_email }}"
+  }
+}
