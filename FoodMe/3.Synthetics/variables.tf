@@ -13,7 +13,7 @@ variable "nr_region" {
   default = "US"
 }
 
-# the URI the monitor runs against.
-variable "nr_uri" {
+# the URL the monitor runs against.
+variable "nr_url" {
   default = "XXXXX"
 }

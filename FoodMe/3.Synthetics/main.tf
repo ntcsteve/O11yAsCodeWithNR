@@ -32,5 +32,5 @@ resource "newrelic_synthetics_monitor" "O11y_asCode-SimpleBrowser-TF" {
   locations_public = ["AP_SOUTHEAST_2", "AP_SOUTHEAST_1", "AP_SOUTH_1", "AP_NORTHEAST_1", "AP_NORTHEAST_2"]
 	
   # The URI the monitor runs against.
-  uri                       = (var.nr_uri)                      
+  uri = (var.nr_url)                      
 }
